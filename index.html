@@ -16,15 +16,24 @@
 
         console.log("Hello World!");
 
-       //CREATE a list of options like rock, paper and scissors//
+       //CREATE a list of options rock, paper and scissors//
        //GENERATE a random integer between 0-2//
-       //GET that integer to grab one of the options from the list above//
+       //GET that integer to select one of the options from the list above//
         function getComputerChoice(){
             const choices = ["rock", "paper", "scissors"];
             const index = Math.floor(Math.random() * 3);
             return choices[index];
         }
         console.log(getComputerChoice());
+
+        
+        //CREATE a prompt so the user can type//
+        //IF the user enters either rock paper os scissors, log to console.//
+        function getHumanChoice(){
+            const userInput = prompt("Let's Play Rock, Paper, Scissors! Choose your weapon:");
+            return userInput;
+        }
+        console.log("You chose: " + getHumanChoice());
 
      </script>
 
