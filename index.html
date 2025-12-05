@@ -16,10 +16,13 @@
 
         console.log("Hello World!");
 
-        //Generate a random number between 1-4//
-        //assign each number a string value of rock, paper or scissors//
+       //CREATE a list of options like rock, paper and scissors//
+       //GENERATE a random integer between 0-2//
+       //GET that integer to grab one of the options from the list above//
         function getComputerChoice(){
-            return Math.floor(Math.random() * 3);
+            const choices = ["rock", "paper", "scissors"];
+            const index = Math.floor(Math.random() * 3);
+            return choices[index];
         }
         console.log(getComputerChoice());
 
