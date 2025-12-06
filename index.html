@@ -69,22 +69,22 @@
         else if (humanChoice === "rock" && computerChoice === "scissors"){
             console.log("You win! Rock beats Scissors.");
          humanScore++;
-            console.log();
+            console.log("Scores => Human:", humanScore, "Computer:", computerScore);
         }
         else if (humanChoice === "scissors" && computerChoice === "paper"){
             console.log("You win! Scissors beats Paper.");
           humanScore++;
-            console.log();
+            console.log("Scores => Human:", humanScore, "Computer:", computerScore);
         }
         else if (humanChoice === "paper" && computerChoice === "rock"){
             console.log("You win! Paper beats Rock.");
           humanScore++;
-            console.log();
+            console.log("Scores => Human:", humanScore, "Computer:", computerScore);
         }
         else {
             console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
           computerScore++;
-            console.log();  
+            console.log("Scores => Human:", humanScore, "Computer:", computerScore);  
         }
         }
 
