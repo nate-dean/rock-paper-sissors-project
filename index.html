@@ -37,11 +37,20 @@
         //LOG "You chose" + choice//
         //ELSE//
         //LOG "Invalid choice, please type rock, paper or scissors"
+        
         function getHumanChoice(){
             const userInput = prompt("Let's Play Rock, Paper, Scissors! Choose your weapon:");
             return userInput;
         }
-        console.log("You chose: " + getHumanChoice());
+        let choice = getHumanChoice();
+        if (choice === "Rock" || choice === "Paper" || choice === "Scissors" || choice === "rock" || choice === "paper" || choice === "scissors")
+        console.log("You chose " + choice);
+        else 
+        console.log("Invalid choice, please type Rock, Paper, or Scissors.");
+
+
+        
+
 
      </script>
 
