@@ -38,13 +38,25 @@
         //CREATE two new variable, one called humanScore and one computerScore//
         //STORE the starting value of 0 in each//
 
-        const humanScore = 0;
-        const computerScore = 0;
+        let humanScore = 0;
+        let computerScore = 0;
 
-        //CREATE a function called playRound: humanChoice, computerChoice//
-        //USE these two parameters to take the human and computer choices as arguments//
-        //MAKE humanChoice function case-insensitive so that player can typo and still works//
-        //INCREMENT the humanScore or computerScore variable based on the round winner.//
+        //CREATE a function called playRound: humanChoice, computerChoice
+        //USE these two parameters to take the human and computer choices as arguments
+        //MAKE humanChoice function case-insensitive so that player can typo and still works
+        //INCREMENT the humanScore or computerScore variable based on the round winner.
+
+        //ELSE IF humanChoice beats computerChoice
+            //LOG "You win [humanChoice] beats [computerChoice]"
+            //INCREMENT humanScore by 1
+        //ELSE 
+            //LOG "You lose [computerChoice] beats [humanChoice]"
+            //INCREMENT computerScore by 1
+
+        //LOG current scores: "Human Score: [humanScore], Computer [computerScore]"
+
+        //CALL getHumanChoice() and getComputerChoice() to get the selections
+        //Pass those values to playRound()
 
         function playRound(humanChoice, computerChoice){
         console.log("Human:", humanChoice, "Computer:", computerChoice); 
@@ -56,15 +68,23 @@
         }
         else if (humanChoice === "rock" && computerChoice === "scissors"){
             console.log("You win! Rock beats Scissors.");
+         humanScore++;
+            console.log();
         }
         else if (humanChoice === "scissors" && computerChoice === "paper"){
             console.log("You win! Scissors beats Paper.");
+          humanScore++;
+            console.log();
         }
         else if (humanChoice === "paper" && computerChoice === "rock"){
             console.log("You win! Paper beats Rock.");
+          humanScore++;
+            console.log();
         }
         else {
             console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
+          computerScore++;
+            console.log();  
         }
         }
 
