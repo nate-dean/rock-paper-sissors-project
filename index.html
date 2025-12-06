@@ -24,8 +24,6 @@
             const index = Math.floor(Math.random() * 3);
             return choices[index];
         }
-       
-
         
         //CREATE a function call getHumanChoice//
         //PROMPT the user to "Choose your weapon"//
@@ -46,7 +44,6 @@
         //CREATE a function called playRound: humanChoice, computerChoice//
         //USE these two parameters to take the human and computer choices as arguments//
         //MAKE humanChoice function case-insensitive so that player can typo and still works//
-        //WRITE the code for your playRound function to console.log a string value representing the round winner, such as: “You lose! Paper beats Rock”.//
         //INCREMENT the humanScore or computerScore variable based on the round winner.//
 
         function playRound(humanChoice, computerChoice){
@@ -70,7 +67,6 @@
             console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
         }
         }
-        
 
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
