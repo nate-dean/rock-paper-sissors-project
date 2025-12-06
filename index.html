@@ -20,7 +20,7 @@
        //GENERATE a random integer between 0-2//
        //GET that integer to select one of the options from the list above//
         function getComputerChoice(){
-            const choices = ["Rock", "Paper", "Scissors"];
+            const choices = ["rock", "paper", "scissors"];
             const index = Math.floor(Math.random() * 3);
             return choices[index];
         }
@@ -70,7 +70,16 @@
             console.log("It's a tie!");
         }
         else if (humanChoice === "rock" && computerChoice === "scissors"){
-            console.log("You win! Rock beats Scissors.")
+            console.log("You win! Rock beats Scissors.");
+        }
+        else if (humanChoice === "scissors" && computerChoice === "paper"){
+            console.log("You win! Scissors beats Paper.");
+        }
+        else if (humanChoice === "paper" && computerChoice === "rock"){
+            console.log("You win! Paper beats Rock.");
+        }
+        else {
+            console.log("You lose! " + computerChoice + " beats " + humanChoice + ".");
         }
         }
         
