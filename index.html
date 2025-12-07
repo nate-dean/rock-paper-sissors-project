@@ -107,6 +107,21 @@
             //ELSE
                 //SAY "The Computer won the game!"
 
+        while (humanScore < 5 && computerScore < 5){
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+
+            const result = playRound(humanSelection, computerSelection);
+                if (result === "win"){
+                    humanScore++;
+                }
+                if (result === "lose"){
+                    computerScore++;
+                }
+            console.log(`Score: You ${humanScore} - Computer ${computerScore}`);
+
+        }
+
      </script>
 
     </body>
