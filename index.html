@@ -16,19 +16,15 @@
 
         console.log("Hello World!");
 
-       //CREATE a list of options rock, paper and scissors//
-       //GENERATE a random integer between 0-2//
-       //GET that integer to select one of the options from the list above//
+       //CREATE a list of options rock, paper and scissors
+    
         function getComputerChoice(){
             const choices = ["rock", "paper", "scissors"];
             const index = Math.floor(Math.random() * 3);
             return choices[index];
         }
         
-        //CREATE a function call getHumanChoice//
-        //PROMPT the user to "Choose your weapon"//
-        //STORE the user input in a variable called userInput//
-        //RETURN userInput//
+        //CREATE a function call getHumanChoice
         
         function getHumanChoice(){
             const userInput = prompt("Let's Play Rock, Paper, Scissors! Choose your weapon:");
@@ -36,27 +32,11 @@
         }
 
         //CREATE two new variable, one called humanScore and one computerScore//
-        //STORE the starting value of 0 in each//
 
         let humanScore = 0;
         let computerScore = 0;
 
         //CREATE a function called playRound: humanChoice, computerChoice
-        //USE these two parameters to take the human and computer choices as arguments
-        //MAKE humanChoice function case-insensitive so that player can typo and still works
-        //INCREMENT the humanScore or computerScore variable based on the round winner.
-
-        //ELSE IF humanChoice beats computerChoice
-            //LOG "You win [humanChoice] beats [computerChoice]"
-            //INCREMENT humanScore by 1
-        //ELSE 
-            //LOG "You lose [computerChoice] beats [humanChoice]"
-            //INCREMENT computerScore by 1
-
-        //LOG current scores: "Human Score: [humanScore], Computer [computerScore]"
-
-        //CALL getHumanChoice() and getComputerChoice() to get the selections
-        //Pass those values to playRound()
 
         function playRound(humanChoice, computerChoice){
         console.log("Human:", humanChoice, "Computer:", computerChoice); 
@@ -89,41 +69,6 @@
         const computerSelection = getComputerChoice();
 
         playRound(humanSelection, computerSelection);
-
-        //Write Loop Code to repeat the game until one player has won 5 rounds:
-
-        //CREATE a loop
-        //KEEP playing rounds while both human and computer scores are below 5
-        //GET the human choice
-        //GET the computer choice
-        //PLAY one round using those choices to update score.
-        
-        //WHEN someone reaches five points:
-            //IF human reaches five points
-                //SAY "You won the game!"
-            //ELSE
-                //SAY "The Computer won the game!"
-
-        while (humanScore < 5 && computerScore < 5){
-            const humanSelection = getHumanChoice();
-            const computerSelection = getComputerChoice();
-
-            const result = playRound(humanSelection, computerSelection);
-                if (result === "win"){
-                    humanScore++;
-                }
-                if (result === "lose"){
-                    computerScore++;
-                }
-            console.log(`Score: You ${humanScore} - Computer ${computerScore}`);
-        }
-    
-        if (humanScore === 5){
-            console.log("You Won the Game!")
-        } else {
-            console.log("The Computer Won the Game.")
-        }
-        
 
      </script>
 
