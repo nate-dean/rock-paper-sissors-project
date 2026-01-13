@@ -12,6 +12,8 @@
         <label for="choose">Choose your weapon:</label>
         <input type="text" id="choose" placeholder="Choose your weapon">
 
+        <div id="buttonDiv"></div>
+
      <script>
 
         console.log("Hello World!");
@@ -24,13 +26,7 @@
             return choices[index];
         }
         
-        //CREATE a function call getHumanChoice
         
-        function getHumanChoice(){
-            const userInput = prompt("Let's Play Rock, Paper, Scissors! Choose your weapon:");
-            return userInput;
-        }
-
         //CREATE two new variable, one called humanScore and one computerScore//
 
         let humanScore = 0;
@@ -65,10 +61,23 @@
         }
         }
 
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        //CREATE 3 buttons and addEventListeners that call the playRound Function
+        
+       const buttonDiv = document.getElementById("buttonDiv");
+       console.log(buttonDiv);
 
-        playRound(humanSelection, computerSelection);
+        const rockButton = document.createElement("button");
+        const paperButton = document.createElement("button");
+        const scissorsButton = document.createElement("button");
+
+        rockButton.textContent = "Rock";
+        paperButton.textContent = "Paper";
+        scissorsButton.textContent = "Scissors"
+
+        buttonDiv.appendChild(rockButton);
+        buttonDiv.appendChild(paperButton);
+        buttonDiv.appendChild(scissorsButton);
+        
 
      </script>
 
