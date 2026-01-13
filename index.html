@@ -3,16 +3,15 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Rock Paper Sissors</title>
+        <title>Rock Paper Scissors</title>
     </head>
 
     <body>
 
-        <h1>Rock Paper Sissors</h1>
-        <label for="choose">Choose your weapon:</label>
-        <input type="text" id="choose" placeholder="Choose your weapon">
+        <h1 style="text-align: center;">Rock Paper Scissors</h1>
+        <h3 style="text-align: center;">Choose your weapon:</h3>
 
-        <div id="buttonDiv"></div>
+        <div id="buttonDiv" style="text-align: center;"></div>
 
      <script>
 
@@ -25,7 +24,6 @@
             const index = Math.floor(Math.random() * 3);
             return choices[index];
         }
-        
         
         //CREATE two new variable, one called humanScore and one computerScore//
 
@@ -77,6 +75,21 @@
         buttonDiv.appendChild(rockButton);
         buttonDiv.appendChild(paperButton);
         buttonDiv.appendChild(scissorsButton);
+
+        //CREATE addEventListeners
+        //CALL playround Function
+
+        rockButton.addEventListener("click", () => {
+            playRound("rock", getComputerChoice());
+        });
+
+        paperButton.addEventListener("click", () => {
+            playRound("paper", getComputerChoice());
+        });
+
+        scissorsButton.addEventListener("click", () => {
+            playRound("scissors", getComputerChoice());
+        });
         
 
      </script>
