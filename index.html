@@ -12,6 +12,9 @@
         <h3 style="text-align: center;">Choose your weapon:</h3>
 
         <div id="buttonDiv" style="text-align: center;"></div>
+        <br>
+       <div id="results" style="text-align: center;"></div>
+       <div id="score" style="text-align: center;"></div>
 
      <script>
 
@@ -62,7 +65,6 @@
         //CREATE 3 buttons and addEventListeners that call the playRound Function
         
        const buttonDiv = document.getElementById("buttonDiv");
-       console.log(buttonDiv);
 
         const rockButton = document.createElement("button");
         const paperButton = document.createElement("button");
@@ -76,20 +78,61 @@
         buttonDiv.appendChild(paperButton);
         buttonDiv.appendChild(scissorsButton);
 
-        //CREATE addEventListeners
-        //CALL playround Function
+        //CREATE addEventListeners that CALL playround Function
 
         rockButton.addEventListener("click", () => {
-            playRound("rock", getComputerChoice());
+             playGame("rock", getComputerChoice());
         });
 
         paperButton.addEventListener("click", () => {
-            playRound("paper", getComputerChoice());
+            playGame("paper", getComputerChoice());
         });
 
         scissorsButton.addEventListener("click", () => {
-            playRound("scissors", getComputerChoice());
+            playGame("scissors", getComputerChoice());
         });
+
+        //DISPLAY results
+
+        const resultDiv = document.getElementById("results");
+        const scoreDiv = document.getElementById("score");
+
+    
+
+        function updateScore(result){
+            if (result === "win") {
+                humanScore++;
+            } else if (result === "lose"){
+                computerScore++;
+            }
+        scoreDiv.textContent = `Human: ${humanScore} | Computer: ${computerScore}`;
+        }
+
+        function updateResults(result, humanChoice, computerChoice) {
+             if (result === "tie") {
+                 resultDiv.textContent = `It's a tie! You both chose ${humanChoice}`;
+             } else if (result === "win") {
+                 resultDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+             } else {
+                 resultDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+             }
+            }
+
+            function playGame(humanChoice){
+                const computerChoice = getComputerChoice();
+                const result = playRound(humanChoice, computerChoice);
+
+                updateScore(result);
+                updateResults(result, humanChoice, computerChoice);
+            }
+
+
+        
+
+
+
+
+
         
 
      </script>
