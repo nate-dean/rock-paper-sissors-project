@@ -108,16 +108,15 @@
 
         function updateResults(result, humanChoice, computerChoice) {
 
-            //Capitalize first letter of humanChoice and computerChoice
             humanChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1);
             computerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
 
              if (result === "tie") {
                  resultDiv.textContent = `It's a Tie! You both chose ${humanChoice}`;
              } else if (result === "win") {
-                 resultDiv.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
+                 resultDiv.textContent = `You Win, ${humanChoice} beats ${computerChoice}!`;
              } else {
-                 resultDiv.textContent = `You Lose! ${computerChoice} beats ${humanChoice}`;
+                 resultDiv.textContent = `You Lose, ${computerChoice} beats ${humanChoice}!`;
              }
             }
 
