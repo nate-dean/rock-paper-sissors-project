@@ -15,6 +15,7 @@
         <br>
        <div id="results" style="text-align: center;"></div>
        <div id="score" style="text-align: center;"></div>
+       <div id="victory" style="text-align: center; color: green; font-size: 20px; margin-top: 20px;"></div>
 
      <script>
 
@@ -76,7 +77,7 @@
         buttonDiv.appendChild(paperButton);
         buttonDiv.appendChild(scissorsButton);
 
-        //CREATE addEventListeners that CALL playround Function
+        //CREATE addEventListeners that CALL playRound Function
 
         rockButton.addEventListener("click", () => {
              playGame("rock", getComputerChoice());
@@ -103,8 +104,22 @@
             } else if (result === "lose"){
                 computerScore++;
             }
+
         scoreDiv.textContent = `Human: ${humanScore} | Computer: ${computerScore}`;
+
+            if (humanScore === 5){
+                victoryDiv.textContent = "Victory is yours! You Won Five Rounds!";
+                humanScore = 0;
+                computerScore = 0;
+                scoreDiv.textContent = `Human: ${humanScore} | Computer: ${computerScore}`;
+            } else if (computerScore == 5){
+                victoryDiv.textContent = "You have been Defeated! The Computer Won Five Rounds!";
+                humanScore = 0;
+                computerScore = 0;
+                scoreDiv.textContent = `Human: ${humanScore} | Computer: ${computerScore}`;
+            }
         }
+
 
         function updateResults(result, humanChoice, computerChoice) {
 
@@ -121,12 +136,22 @@
             }
 
             function playGame(humanChoice){
+
+                victoryDiv.textContent = "";
+                
                 const computerChoice = getComputerChoice();
                 const result = playRound(humanChoice, computerChoice);
 
                 updateScore(result);
                 updateResults(result, humanChoice, computerChoice);
             }
+
+            //Victory Div
+            const victoryDiv = document.getElementById("victory");
+
+
+
+
 
      </script>
 
